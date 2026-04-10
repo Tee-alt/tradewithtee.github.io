@@ -1,0 +1,103 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trade With Tee</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body { background: linear-gradient(135deg, #020617, #0f0a1f); }
+  </style>
+</head>
+<body class="text-white font-sans">  <!-- Navbar -->  <nav class="flex justify-between items-center px-6 py-4 bg-black/40 backdrop-blur-lg fixed w-full top-0 z-50 border-b border-purple-900/30">
+    <h1 class="text-2xl font-bold tracking-wide text-purple-400">Trade With Tee</h1>
+    <div class="hidden md:flex gap-8 text-sm">
+      <a href="#home" class="hover:text-purple-400">Home</a>
+      <a href="#posts" class="hover:text-purple-400">Posts</a>
+      <a href="#about" class="hover:text-purple-400">About</a>
+      <a href="#contact" class="hover:text-purple-400">Contact</a>
+    </div>
+  </nav>  <!-- Hero -->  <section id="home" class="h-screen flex flex-col justify-center items-center text-center px-6">
+    <h1 class="text-5xl md:text-7xl font-extrabold leading-tight text-purple-400">
+      My Trading Journal
+    </h1>
+    <p class="mt-6 text-gray-400 max-w-xl">
+      A real and honest journey through forex trading, discipline, growth, losses, and wins. I share what actually works, what doesn’t, and how I’m building consistency one trade at a time.
+    </p>
+  </section>  <!-- Blog Posts -->  <section id="posts" class="py-20 px-6">
+    <h2 class="text-3xl font-bold mb-10 text-center text-purple-400">Latest Posts</h2><div class="grid md:grid-cols-3 gap-6">
+
+  <!-- Post 1 -->
+  <div class="bg-black/40 p-5 rounded-2xl backdrop-blur-lg border border-purple-900/30 hover:border-purple-500 transition">
+    <h3 class="text-xl font-semibold text-purple-300">How I Took My Last Trade</h3>
+    <p class="text-gray-400 mt-2">Breaking down my setup, entry, and reasoning behind the trade.</p>
+    <button onclick="openPost(1)" class="mt-4 text-sm text-purple-400 underline">Read More</button>
+  </div>
+
+  <!-- Post 2 -->
+  <div class="bg-black/40 p-5 rounded-2xl backdrop-blur-lg border border-purple-900/30 hover:border-purple-500 transition">
+    <h3 class="text-xl font-semibold text-purple-300">Understanding Market Structure</h3>
+    <p class="text-gray-400 mt-2">A simple explanation of how price moves and why it matters.</p>
+    <button onclick="openPost(2)" class="mt-4 text-sm text-purple-400 underline">Read More</button>
+  </div>
+
+  <!-- Post 3 -->
+  <div class="bg-black/40 p-5 rounded-2xl backdrop-blur-lg border border-purple-900/30 hover:border-purple-500 transition">
+    <h3 class="text-xl font-semibold text-purple-300">My Biggest Trading Mistake</h3>
+    <p class="text-gray-400 mt-2">What I did wrong and what it taught me.</p>
+    <button onclick="openPost(3)" class="mt-4 text-sm text-purple-400 underline">Read More</button>
+  </div>
+
+</div>
+
+  </section>  <!-- Blog Modal -->  <div id="postModal" class="fixed inset-0 bg-black/90 hidden justify-center items-center p-6">
+    <div class="bg-[#0b061a] p-6 rounded-2xl max-w-2xl w-full border border-purple-900/40">
+      <h2 id="postTitle" class="text-2xl font-bold mb-4 text-purple-400"></h2>
+      <p id="postContent" class="text-gray-300"></p>
+      <button onclick="closePost()" class="mt-6 px-6 py-2 bg-purple-500 hover:bg-purple-600 text-white rounded-xl">Close</button>
+    </div>
+  </div>  <!-- About -->  <section id="about" class="py-20 px-6 text-center">
+    <h2 class="text-3xl font-bold mb-4 text-purple-400">About Me</h2>
+    <p class="text-gray-400 max-w-2xl mx-auto">
+      Hi, I’m Tee.
+
+This blog is my personal journey into forex trading and self-discipline. I’m not here to pretend I’m perfect. I take losses, I learn, and I grow.
+
+I created this space to document everything, my strategies, mindset, mistakes, and wins.
+
+If you’re on this journey too, you’re not alone.
+    </p>
+  </section>  <!-- Contact -->  <section id="contact" class="py-20 px-6 text-center">
+    <h2 class="text-3xl font-bold mb-4 text-purple-400">Contact</h2>
+    <p class="text-gray-400">Reach out to connect or learn more.</p>
+  </section>  <!-- Footer -->  <footer class="py-6 text-center text-gray-500 text-sm border-t border-purple-900/20">
+    © 2026 Tradewithtee. All rights reserved.
+  </footer>  <script>
+    function openPost(id) {
+      const modal = document.getElementById('postModal');
+      const title = document.getElementById('postTitle');
+      const content = document.getElementById('postContent');
+
+      if (id === 1) {
+        title.innerText = "How I Took My Last Trade";
+        content.innerText = "Here you will explain your trade step-by-step...";
+      }
+      if (id === 2) {
+        title.innerText = "Understanding Market Structure";
+        content.innerText = "Explain market structure in simple terms here...";
+      }
+      if (id === 3) {
+        title.innerText = "My Biggest Trading Mistake";
+        content.innerText = "Talk about your mistake and lesson here...";
+      }
+
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
+    function closePost() {
+      const modal = document.getElementById('postModal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+  </script></body>
+</html>
